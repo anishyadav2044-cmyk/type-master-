@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om Yadav - Typing Master</title>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --bg-color: #add8e6; 
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --correct: #22c55e;
+            --wrong: #ef4444;
+        }
+
+        body {
+            font-family: 'Consolas', 'Courier New', monospace;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            width: 95%;
+            max-width: 850px;
+            border: 2px solid #ee5011;
+            z-index: 10;
+        }
+
+        header { text-align: center; margin-bottom: 25px; }
+        h1 { color: var(--primary-color); margin: 0; font-size: 1.8rem; text-transform: uppercase; }
+        .subtitle { color: #64748b; margin-top: 5px; font-weight: bold; }
+
+        .config-bar {
+            display: flex;
+            justify-content: space-between;
+            background: #0f172a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        input[type="number"] {
+            background: #87e817;
+            border: none;
+            padding: 5px;
+            width: 50px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #text-display {
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            height: 140px;
+            overflow: hidden;
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            user-select: none;
+            word-wrap: break-word;
+        }
+
+        .current-char { border-bottom: 3px solid var(--primary-color); background: #334155; }
+        .correct { color: var(--correct); }
+        .wrong { color: var(--wrong); border-bottom: 3px solid var(--wrong); }
+
+        #input-field {
+            width: 100%;
+            padding: 15px;
+            background: #f1f5f9;
+            border: 2px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .stats-row { display: flex; gap: 10px; margin-top: 20px; }
+        .stat-card { flex: 1; background: #0f172a; color: white; padding: 10px; border-radius: 8px; text-align: center; }
+        .stat-card strong { font-size: 1.5rem; color: var(--primary-color); }
+
+        .btn-reset { background: var(--primary-color); color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; width: 100%; margin-top: 15px; font-weight: bold; font-size: 1rem; }
+
+        /* Ad Sandbox Styling */
+        .ad-container {
+            margin-top: 25px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            min-height: 70px;
+        }
+
+        .footer-nav { margin-top: 20px; display: flex; gap: 20px; }
+        .footer-nav a { color: #1e293b; text-decoration: none; font-size: 0.9rem; font-weight: bold; cursor: pointer; }
+
+        .modal { display: none; position: fixed; z-index: 100; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
+        .modal-content { background: white; margin: 10% auto; padding: 30px; border-radius: 12px; width: 80%; max-width: 500px; position: relative; }
+        .close-btn { position: absolute; right: 20px; top: 10px; font-size: 28px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1 class="subtitle">10-Finger Typing Master Test</h1>
+        <pre style="color: darkred;">WORLD WIDE EDUCATION CENTRE     DEV-OM YADAV</pre>
+    </header>
+
+    <div class="config-bar">
+        <div>TIME (MIN): <input type="number" id="time-input" value="1" min="1"></div>
+        <div id="timer-text">TIME LEFT: 0s</div>
+    </div>
+
+    <div id="text-display"></div>
+    <input type="text" id="input-field" placeholder="Yahan type karna shuru karein..." autocomplete="off" autofocus>
+
+    <div class="stats-row">
+        <div class="stat-card"><div>WPM</div><strong id="wpm">0</strong></div>
+        <div class="stat-card"><div>Accuracy</div><strong id="accuracy">100</strong>%</div>
+        <div class="stat-card"><div>Mistakes</div><strong id="mistakes">0</strong></div>
+    </div>
+
+    <button class="btn-reset" onclick="location.reload()">Restart Test</button>
+
+    <div class="ad-container">
+        <iframe 
+            style="width: 468px; height: 60px; border: none; overflow: hidden;" 
+            sandbox="allow-scripts allow-forms allow-same-origin"
+            srcdoc="
+                <body style='margin:0; display:flex; justify-content:center;'>
+                <script type='text/javascript'>
+                    atOptions = { 'key' : '3e54154489ac49775971265d6617c0be', 'format' : 'iframe', 'height' : 60, 'width' : 468, 'params' : {} };
+                </script>
+                <script type='text/javascript' src='https://www.highperformanceformat.com/3e54154489ac49775971265d6617c0be/invoke.js'></script>
+                </body>
+            ">
+        </iframe>
+    </div>
+</div>
+
+<footer class="footer-nav">
+    <a onclick="openModal('about')">About Us</a>
+    <a onclick="openModal('privacy')">Privacy Policy</a>
+    <a onclick="openModal('contact')">Contact Us</a>
+</footer>
+
+<div id="about" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('about')">&times;</span><h2>About Us</h2><p>Designed by Om Yadav (BCA Student) at World Wide Education Centre.</p></div></div>
+<div id="privacy" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('privacy')">&times;</span><h2>Privacy Policy</h2><p>No personal data is collected. Typing results stay in your browser.</p></div></div>
+<div id="contact" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('contact')">&times;</span><h2>Contact Us</h2><p>Email: anishyadav2044@gmail.com</p></div></div>
+
+<script>
+    const textDisplay = document.getElementById('text-display');
+    const inputField = document.getElementById('input-field');
+    const timerText = document.getElementById('timer-text');
+    const wpmDisplay = document.getElementById('wpm');
+    const accuracyDisplay = document.getElementById('accuracy');
+    const mistakesDisplay = document.getElementById('mistakes');
+    const timeInput = document.getElementById('time-input');
+
+    const sampleTexts = [
+        "om yadav class bca student is practicing hard to master 10 finger typing india best computre centre is world wide education centre.",
+        "Dream don't work unless you do focus on the goal small steps every day lead to big result 2026.",
+        "In BCA logic building is key if speed is greater than forty then status is professional.",
+        "Typing fast requires all ten fingers don't look at the keyboard look at the screen."
+    ];
+
+    let timer, timeLeft, isPlaying = false, charIndex = 0, mistakes = 0, totalCharsTyped = 0;
+
+    function loadText() {
+        const text = sampleTexts[Math.floor(Math.random() * sampleTexts.length)];
+        textDisplay.innerHTML = "";
+        text.split("").forEach(char => {
+            let span = document.createElement('span');
+            span.innerText = char;
+            textDisplay.appendChild(span);
+        });
+        if(textDisplay.querySelectorAll('span').length > 0)
+            textDisplay.querySelectorAll('span')[0].classList.add('current-char');
+    }
+
+    inputField.addEventListener('input', (e) => {
+        const characters = textDisplay.querySelectorAll('span');
+        let typedChar = e.target.value.split("")[charIndex];
+
+        if (!isPlaying && e.target.value.length > 0) {
+            isPlaying = true;
+            timeLeft = parseInt(timeInput.value) * 60;
+            timer = setInterval(() => {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    timerText.innerText = `TIME LEFT: ${timeLeft}s`;
+                    let wpm = Math.round(((totalCharsTyped - mistakes) / 5) / ((parseInt(timeInput.value)*60 - timeLeft)/60));
+                    wpmDisplay.innerText = wpm > 0 ? wpm : 0;
+                } else {
+                    clearInterval(timer);
+                    inputField.disabled = true;
+                    alert("Time Up!");
+                }
+            }, 1000);
+        }
+
+        if (typedChar == null) {
+            if (charIndex > 0) {
+                charIndex--;
+                characters[charIndex].classList.remove('correct', 'wrong');
+            }
+        } else {
+            if (characters[charIndex].innerText === typedChar) {
+                characters[charIndex].classList.add('correct');
+            } else {
+                mistakes++;
+                characters[charIndex].classList.add('wrong');
+            }
+            charIndex++;
+            totalCharsTyped++;
+        }
+
+        mistakesDisplay.innerText = mistakes;
+        let acc = totalCharsTyped > 0 ? Math.round(((totalCharsTyped - mistakes) / totalCharsTyped) * 100) : 100;
+        accuracyDisplay.innerText = acc;
+
+        characters.forEach(span => span.classList.remove('current-char'));
+        if (charIndex < characters.length) {
+            characters[charIndex].classList.add('current-char');
+        } else {
+            inputField.value = ""; charIndex = 0; loadText();
+        }
+    });
+
+    function openModal(id) { document.getElementById(id).style.display = "block"; }
+    function closeModal(id) { document.getElementById(id).style.display = "none"; }
+
+    loadText();
+</script>
+</body>
+</html>
