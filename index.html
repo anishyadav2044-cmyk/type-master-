@@ -1,1 +1,176 @@
-<h1>server down laxmi sir g<h1>
+<!DOCTYPE html>
+<html lang="hi-IN"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="_jILQK5_oNjz5aSJQ0YR_jq_bmepo3OEU8Vs6Y0pZgY" />
+    
+    <title>Online Hindi & English Typing Test | Kruti Dev 10 Typing Practice</title>
+    <meta name="description" content="Free Online Hindi and English typing test. Practice Kruti Dev 10 Hindi typing and English typing to improve speed and accuracy. Best for SSC, Railway, and State Govt exams.">
+    <meta name="keywords" content="Hindi typing test, English typing test, Kruti Dev 10 typing practice, free online typing test, typing speed test, Hindi English typing practice, WPM calculator, typing master pro online">
+    <meta name="author" content="Typing Master Pro">
+    <meta name="robots" content="index, follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <style>
+        :root { --primary: #0ea5e9; --bg: #add8e6; --card: #ffffff; --correct: #22c55e; --wrong: #ef4444; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        .container { background: var(--card); padding: 30px; border-radius: 16px; width: 95%; max-width: 850px; border: 2px solid #ee5011; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .config-bar { display: flex; justify-content: space-between; background: #0f172a; padding: 15px; border-radius: 8px; margin-bottom: 20px; color: white; align-items: center; }
+        
+        #text-display { font-size: 1.8rem; line-height: 2.8rem; height: 120px; background: #0f172a; color: #cbd5e1; padding: 20px; border-radius: 10px; margin-bottom: 20px; overflow: hidden; }
+        .current-char { border-bottom: 3px solid var(--primary); background: #334155; }
+        .correct { color: var(--correct); }
+        .wrong { color: var(--wrong); background: rgba(239, 68, 68, 0.3); }
+        
+        #input-field { width: 100%; padding: 15px; border: 2px solid #cbd5e1; border-radius: 10px; font-size: 1.4rem; box-sizing: border-box; outline: none; }
+        #input-field:focus { border-color: var(--primary); }
+
+        .stats-row { display: flex; gap: 10px; margin-top: 20px; }
+        .stat-card { flex: 1; background: #0f172a; color: white; padding: 10px; border-radius: 8px; text-align: center; }
+        .btn-reset { background: var(--primary); color: white; border: none; padding: 15px; border-radius: 8px; cursor: pointer; width: 100%; margin-top: 15px; font-weight: bold; font-size: 1.1rem; }
+        .ad-container { margin-top: 25px; display: flex; justify-content: center; }
+    </style>
+</head>
+<body>
+    <script src="https://pl29028606.profitablecpmratenetwork.com/9d/4d/a8/9d4da8e79a7c745e06abcb25f47f37b3.js"></script>
+
+<div class="container">
+    <header style="text-align: center; margin-bottom: 20px;">
+        <h1 style="color: var(--primary); margin:0;">Free Online Hindi and English Typing Practice</h1>
+        <p style="color: #666; font-size: 14px;">Improve your typing speed for SSC, High Court, and Civil Exams</p>
+    </header>
+    
+    <div style="text-align: center; margin-bottom: 10px;">
+        <a href="type.html">
+            <button style="padding: 12px 25px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;">
+                Go to Kruti Dev 10 Hindi Typing Test
+            </button>
+        </a>
+    </div>
+
+    <div class="config-bar">
+        <div style="font-weight: bold; color: var(--primary);">ENGLISH TYPING MODE</div>
+        <div>TIME: <input type="number" id="time" value="1" style="width:40px; background: transparent; color: white; border: 1px solid #334155;"> MIN</div>
+        <div id="timer">LEFT: 60s</div>
+    </div>
+
+    <div id="text-display">Click 'Start Test' to load English words...</div>
+    <input type="text" id="input-field" placeholder="Pehle niche button dabayein..." disabled autocomplete="off">
+
+    <div class="stats-row">
+        <div class="stat-card">WPM<br><strong id="wpm">0</strong></div>
+        <div class="stat-card">Accuracy<br><strong id="acc">100</strong>%</div>
+        <div class="stat-card">Mistakes<br><strong id="err">0</strong></div>
+    </div>
+
+    <button id="main-btn" class="btn-reset" onclick="startTest()">Start Test</button>
+
+    <div class="ad-container">
+        <iframe style="width:468px; height:60px; border:none;" sandbox="allow-scripts allow-same-origin" srcdoc="<body style='margin:0; display:flex; justify-content:center;'><script>atOptions={'key':'3e54154489ac49775971265d6617c0be','format':'iframe','height':60,'width':468,'params':{}};</script><script src='https://www.highperformanceformat.com/3e54154489ac49775971265d6617c0be/invoke.js'></script></body>"></iframe>
+    </div>
+</div>
+
+<script>
+    const display = document.getElementById('text-display');
+    const input = document.getElementById('input-field');
+    
+    const enTexts = [
+        "om yadav is a bca student at world wide education centre who loves coding practice and parience ,5233 When; you use all tne fingers 230.: younr hand stay: staeyrelaxed.",
+        "practice makes a man perfect keep typing every day to increase your speed The quick brown fox jumps over the lazy.dog.256 Typing is a skill that improve with considtent.",
+        "computer education is very important for every student in this modern digital era focus on accuracy:first56333and speed will folow naturally'587 keep your staight your wrist slightly liefts .",
+        "the quick brown fox jumps over the lazy dog to test all keyboard alphabets your wrist slightly leftes 10047 ; Technolgy, but The Has and your eyes On the screen faster home Day /.",
+        "successful people are not gifted they just work hard then succeed on purpose remain in mordenr 55 open School here Game imporove your health any :'That problem ask daily '.",
+        "typing with all ten fingers helps you work faster and saves a lot of time.",
+        "programming is the art of telling another human what one wants the computer to do.",
+        "technology is best when it brings people together and solves real world problems.",
+        "patience and persistence are the keys to master any professional technical skill.",
+        "always code as if the person who ends up maintaining your code will be a violent psychopath."
+    ];
+
+    let timer, timeLeft, isPlaying = false, charIndex = 0, mistakes = 0, totalTyped = 0;
+
+    function startTest() {
+        resetTest();
+        input.disabled = false;
+        input.placeholder = "Start typing now...";
+        input.focus();
+        loadNewText();
+    }
+
+    function loadNewText() {
+        const text = enTexts[Math.floor(Math.random() * enTexts.length)];
+        display.innerHTML = "";
+
+        text.split("").forEach(char => {
+            let span = document.createElement('span');
+            span.innerText = char;
+            display.appendChild(span);
+        });
+        display.querySelectorAll('span')[0].classList.add('current-char');
+    }
+
+    function resetTest() {
+        clearInterval(timer);
+        isPlaying = false; charIndex = 0; mistakes = 0; totalTyped = 0;
+        input.value = ""; 
+        document.getElementById('wpm').innerText = "0";
+        document.getElementById('acc').innerText = "100";
+        document.getElementById('err').innerText = "0";
+        document.getElementById('timer').innerText = "LEFT: " + (document.getElementById('time').value * 60) + "s";
+    }
+
+    input.addEventListener('input', (e) => {
+        const spans = display.querySelectorAll('span');
+        let typed = e.target.value.split("")[charIndex];
+
+        if (!isPlaying) {
+            isPlaying = true;
+            timeLeft = document.getElementById('time').value * 60;
+            timer = setInterval(() => {
+                if(timeLeft > 0) {
+                    timeLeft--;
+                    document.getElementById('timer').innerText = "LEFT: " + timeLeft + "s";
+                    let wpm = Math.round(((totalTyped - mistakes) / 5) / ((document.getElementById('time').value * 60 - timeLeft) / 60));
+                    document.getElementById('wpm').innerText = wpm > 0 ? wpm : 0;
+                } else { 
+                    clearInterval(timer); 
+                    input.disabled = true; 
+                    alert("Time Up! Your WPM: " + document.getElementById('wpm').innerText); 
+                }
+            }, 1000);
+        }
+
+        if (typed == null) {
+            if (charIndex > 0) { 
+                charIndex--; 
+                spans[charIndex].classList.remove('correct', 'wrong'); 
+            }
+        } else {
+            if (spans[charIndex].innerText === typed) { 
+                spans[charIndex].classList.add('correct'); 
+            } else { 
+                mistakes++; 
+                spans[charIndex].classList.add('wrong'); 
+            }
+            charIndex++; 
+            totalTyped++;
+        }
+
+        document.getElementById('err').innerText = mistakes;
+        document.getElementById('acc').innerText = totalTyped > 0 ? Math.round(((totalTyped - mistakes) / totalTyped) * 100) : 100;
+
+        spans.forEach(s => s.classList.remove('current-char'));
+        if(spans[charIndex]) {
+            spans[charIndex].classList.add('current-char');
+        } else { 
+            input.value = ""; 
+            charIndex = 0; 
+            loadNewText(); 
+        }
+    });
+</script>
+</body>
+</html>
