@@ -34,42 +34,19 @@
             padding: 10px;
         }
 
-        /* Header Layout */
-        .header-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 15px;
-        }
-
-        .header-table td {
-            vertical-align: middle;
-        }
-
-        /* Photo Column (Left Side) */
-        .photo-td {
-            width: 120px;
-            text-align: left;
-        }
-
-        .profile-img {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            border: 3px solid #e91e63;
-            object-fit: cover;
-        }
-
-        /* University & Logo Header */
+        /* Header Top: University Logo & Title */
         .university-header {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 8px;
+            margin-bottom: 20px;
         }
 
         .univ-logo {
-            width: 90px;
-            height: 90px;
+            width: 140px;
+            height: 140px;
             object-fit: contain;
         }
 
@@ -83,14 +60,29 @@
             text-shadow: 1px 1px 0px #000;
         }
 
-        /* Main Student Name (Large Header) */
+        /* Profile Section Below University Header */
+        .student-profile-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 8px; /* Square Shape */
+            border: 3px solid #e91e63;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+
         .student-main-title {
             text-align: center;
             font-size: 32px;
             font-weight: 900;
             color: #0f172a;
             letter-spacing: 2px;
-            margin-top: 5px;
+            margin-top: 10px;
             text-transform: uppercase;
         }
 
@@ -213,22 +205,6 @@
                 padding: 10px 5px;
             }
 
-            .header-table td {
-                display: block;
-                width: 100%;
-                text-align: center !important;
-            }
-
-            .photo-td {
-                margin-bottom: 15px;
-                text-align: center !important;
-                width: 100%;
-            }
-
-            .university-header {
-                justify-content: center;
-            }
-
             .university-title {
                 font-size: 20px;
             }
@@ -252,28 +228,22 @@
     <div class="result-card">
         <div class="inner-border">
             
-            <!-- Result Header with Left Photo & University Details -->
-            <table class="header-table">
-                <tr>
-                    <!-- Profile Photo on Left Side -->
-                    <td class="photo-td">
-                        <a href="https://ibb.co/1fky64sk" target="_blank">
-                            <img src="https://i.ibb.co/zhz9Jt8z/IMG-20260921-210433.jpg" alt="Om Yadav" class="profile-img">
-                        </a>
-                    </td>
-                    <!-- Header Info with University Name & Logo -->
-                    <td>
-                        <div class="university-header">
-                            <a href="https://ibb.co/RkqrvZsj" target="_blank">
-                                <img src="https://i.ibb.co/kstbHkwm/black-logo.webp" alt="Anjaneya University Logo" class="univ-logo">
-                            </a>
-                            <div class="university-title">Anjaneya University</div>
-                        </div>
-                        <div class="student-main-title">OM YADAV</div>
-                        <div class="sub-title">Student Academic & Professional Record</div>
-                    </td>
-                </tr>
-            </table>
+            <!-- Top Section: University Logo & Title -->
+            <div class="university-header">
+                <a href="https://ibb.co/RkqrvZsj" target="_blank">
+                    <img src="https://i.ibb.co/kstbHkwm/black-logo.webp" alt="Anjaneya University Logo" class="univ-logo">
+                </a>
+                <div class="university-title">Anjaneya University</div>
+            </div>
+
+            <!-- Middle Section: Student Photo & Name Below University Header -->
+            <div class="student-profile-section">
+                <a href="https://ibb.co/1fky64sk" target="_blank">
+                    <img src="https://i.ibb.co/zhz9Jt8z/IMG-20260921-210433.jpg" alt="Om Yadav" class="profile-img">
+                </a>
+                <div class="student-main-title">OM YADAV</div>
+                <div class="sub-title">Student Academic & Professional Record</div>
+            </div>
 
             <!-- University Introduction Section -->
             <div class="intro-box">
@@ -452,5 +422,4 @@
     </div>
 
 </body>
-                                </html>
-                                
+</html>
